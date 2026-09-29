@@ -1,0 +1,10 @@
+[Unit]
+Description=Claude Roadmap Orchestrator
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=sanxez
+WorkingDirectory=/opt/claude-roadmap-orchestrator
+ExecStart=/usr/bin/python3 /opt/claude-roadmap-orchestrator/orchestrator.py

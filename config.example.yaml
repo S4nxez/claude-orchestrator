@@ -1,0 +1,47 @@
+# Copy to config.yaml and edit it.
+timezone: Europe/Madrid
+
+# Scheduler policy
+daily_pr_target: 2
+weekly_pr_target: 10
+sunday_boost_start: "09:00"
+max_runs_per_day: 6
+min_hours_between_runs: 2.5
+
+# Claude Code safety limits
+claude_timeout_minutes: 60
+max_turns: 15
+
+# GitHub identity used to detect YOUR approval.
+# This must match your GitHub login exactly.
+github_owner: "YOUR_GITHUB_USERNAME"
+
+# Only create PRs; never merge them.
+base_branch: main
+
+# Rotation persists across runs in state.json.
+# 0 = first project, 1 = second, etc.
+projects:
+  - name: trade-analytics
+    repo_dir: /opt/projects/trade-analytics
+    github_repo: YOUR_GITHUB_USERNAME/trade-analytics
+    roadmap: ROADMAP.md
+    enabled: true
+
+  - name: devtoks
+    repo_dir: /opt/projects/devtoks
+    github_repo: YOUR_GITHUB_USERNAME/devtoks
+    roadmap: ROADMAP.md
+    enabled: true
+
+  - name: project3
+    repo_dir: /opt/projects/project3
+    github_repo: YOUR_GITHUB_USERNAME/project3
+    roadmap: ROADMAP.md
+    enabled: false
+
+  - name: project4
+    repo_dir: /opt/projects/project4
+    github_repo: YOUR_GITHUB_USERNAME/project4
+    roadmap: ROADMAP.md
+    enabled: false
